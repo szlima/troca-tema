@@ -1,0 +1,59 @@
+*{
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+h2, h4, p{
+    margin: 5px 0;
+}
+
+.componente{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 2px;
+    border-style: solid;
+}
+
+i{
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: left;
+    padding: 0 20px;
+}
+
+i:hover{
+    cursor: pointer;
+}
+
+header{
+    height: 20%;
+    flex-direction: column;
+}
+
+footer{
+    height: 10%;
+}
+
+.principal{
+    height: 70%;
+    width: 100%;
+    display: flex;
+}
+
+aside{
+    height: 100%;
+    width: 30%;
+}
+
+main{
+    height: 100%;
+    width: 70%;    
+}
