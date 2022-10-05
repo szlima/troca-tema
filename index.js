@@ -15,6 +15,10 @@ const definirTema= tema => {
         componentes[i].style.borderColor= tema.destaque;
 };
 
+//Action types
+const TEMA_ESCURO= 'TEMA_ESCURO';
+const TEMA_CLARO= 'TEMA_CLARO';
+
 //Estado inicial da aplicação
 const estadoPadrao= {
     fundo: 'rgb(255, 245, 233)',
@@ -22,5 +26,28 @@ const estadoPadrao= {
     destaque: 'rgb(228, 95, 172)',
     icone: 'fa-moon'
 };
+
+//Action creators
+function mudarParaClaro(){
+    return {
+        type: TEMA_CLARO,
+        payload: {
+            ...estadoPadrao
+        }
+    };
+}
+
+function mudarParaEscuro(){
+    return{
+        type: TEMA_ESCURO,
+        payload: {
+            fundo: 'rgb(82, 82, 82)',
+            padrao: 'rgb(255, 235, 211)',
+            destaque: 'rgb(226, 183, 208)',
+            icone: 'fa-sun'
+        }        
+    };
+}
+
 
 definirTema(estadoPadrao);
