@@ -49,5 +49,25 @@ function mudarParaEscuro(){
     };
 }
 
+//Reducer
+function mudarTemaReducer(estado= estadoPadrao, acao){
+    switch(acao.type){
+        case TEMA_ESCURO:
+            return {
+                tema: TEMA_ESCURO,
+                iconeAntigo: estado.icone,
+                ...acao.payload
+            };
+        case TEMA_CLARO:
+            return {
+                tema: TEMA_CLARO,
+                iconeAntigo: estado.icone,
+                ...acao.payload
+            };
+        default:
+            return estado;
+    }
+}
+
 
 definirTema(estadoPadrao);
