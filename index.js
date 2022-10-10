@@ -30,10 +30,7 @@ const estadoPadrao= {
 //Action creators
 function mudarParaClaro(){
     return {
-        type: TEMA_CLARO,
-        payload: {
-            ...estadoPadrao
-        }
+        type: TEMA_CLARO
     };
 }
 
@@ -62,12 +59,23 @@ function mudarTemaReducer(estado= estadoPadrao, acao){
             return {
                 tema: TEMA_CLARO,
                 iconeAntigo: estado.icone,
-                ...acao.payload
+                ...estadoPadrao
             };
         default:
             return estado;
     }
 }
 
+
+//Store
+const store= Redux.createStore(mudarTemaReducer);
+store.subscribe(() => definirTema(store.getState()));
+
+
+botaoTema.addEventListener('click', () =>    
+    store.getState().tema === TEMA_ESCURO ?
+        store.dispatch(mudarParaClaro()) :
+        store.dispatch(mudarParaEscuro())    
+);
 
 definirTema(estadoPadrao);
