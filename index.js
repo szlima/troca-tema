@@ -1,9 +1,8 @@
+const body= document.querySelector('body');
+const botaoTema= document.querySelector('#botaoTema');
+const componentes= document.querySelectorAll('.componente');
 
-const definirTema= tema => {   
-    const body= document.querySelector('body');
-    const botaoTema= document.querySelector('#botaoTema');
-    const componentes= document.querySelectorAll('.componente');
-
+const definirTema= tema => {    
     body.style.background= tema.fundo;
     body.style.color= tema.padrao;
 
